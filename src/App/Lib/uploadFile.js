@@ -1,4 +1,5 @@
-export default val => {
+const setCodeMirrorValue = val => {
   document.querySelector('.CodeMirror').CodeMirror.setValue(val);
 };
-// Little dirty solution.
+
+export default setCodeMirrorValue;

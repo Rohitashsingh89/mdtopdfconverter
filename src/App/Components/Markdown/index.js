@@ -31,14 +31,14 @@ const Markdown = ({ className }) => {
     <div
       ref={markdownRef}
       style={{ opacity: isOver || uploading ? 0.5 : 1 }}
-      className={className}
+      className={className + " editor-container"}
       onMouseMove={e => {
         if (!isDrag) return;
         const pageX = e.nativeEvent.pageX;
         setWidth(pageX - startX);
       }}
     >
-      <Editor className="no-print" width={width} setText={setText} />
+      <Editor className="no-print markdown-editor" width={width} setText={setText} />
       <DragBar
         className="no-print"
         isDrag={isDrag}
@@ -56,4 +56,5 @@ export default styled(Markdown)`
   }
   height: calc(100% - 40px);
   display: flex;
+  
 `;

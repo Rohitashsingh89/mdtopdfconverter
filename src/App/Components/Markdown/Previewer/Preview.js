@@ -20,7 +20,7 @@ const highlight = (str, lang) => {
   return "";
 };
 
-export default ({ source, children }) => {
+const MarkdownPreviewer = ({ source, children }) => {
   return (
       <Markdown
         source={source}
@@ -30,3 +30,5 @@ export default ({ source, children }) => {
       </Markdown>
   );
 };
+
+export default MarkdownPreviewer;

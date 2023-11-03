@@ -15,6 +15,7 @@ const App = ({ className }) => {
 };
 export default styled(App)`
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   font-family: 微軟正黑體, sans-serif;

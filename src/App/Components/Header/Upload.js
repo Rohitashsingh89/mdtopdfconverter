@@ -1,7 +1,8 @@
 import React from 'react';
 import uploadFile from '../../Lib/uploadFile.js';
+import browse from '../../assets/img/import.png'
 
-export default props => {
+const FileUpload = props => {
   const onChange = e => {
     const files = e.currentTarget.files;
     if (files.length > 0) {
@@ -19,7 +20,7 @@ export default props => {
     }
   };
   return (
-    <p {...props} style={{ position: 'relative' }}>
+    <p {...props} style={{ position: 'relative', border:"none" }}>
       <input
         id="mdFile"
         type="file"
@@ -41,9 +42,11 @@ export default props => {
         }}
       />
       <span role="img" aria-label="upload">
-        📁
+        <img src={browse} alt="Upload Icon" height={"20px"} style={{ paddingRight: "5px", marginTop: "6px"}} rel="noreferrer" />
       </span>
-      <span>Choose</span>
+      <span>Import MD</span>
     </p>
   );
 };
+
+export default FileUpload;

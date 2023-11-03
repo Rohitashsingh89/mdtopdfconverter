@@ -14,14 +14,17 @@ const Wrapper = styled.div`
   }
 `;
 const LazyPreview = lazy(() => import('./Preview.js'));
-export default ({ source, children }) => {
+const MarkdownPreviewerBody = ({ source, children }) => {
   return (
     <ErrorBoundary>
       <Suspense fallback={<Loading duration={0.5} />}>
-        <Wrapper className="preview  markdown-body">
+        <Wrapper className="preview markdown-body">
           <LazyPreview source={source}>{children}</LazyPreview>
         </Wrapper>
       </Suspense>
     </ErrorBoundary>
   );
 };
+
+export default MarkdownPreviewerBody;
+
